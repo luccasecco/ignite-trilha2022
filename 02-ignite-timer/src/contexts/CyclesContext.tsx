@@ -77,7 +77,7 @@ export function CyclesContextProvider({
   }
 
   function markCurrentCycleAsFinished() {
-    dispatch(markCurrentCycleAsFinishedAction)
+    dispatch(markCurrentCycleAsFinishedAction())
   }
 
   function createNewCycle(data: CreateCycleData) {
