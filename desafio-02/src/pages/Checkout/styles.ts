@@ -4,8 +4,11 @@ export const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  max-width: 74rem;
-  margin: 1rem auto;
+  max-width: 75rem;
+  margin: 2rem auto;
+
+  font-size: 0.875rem;
+  font-family: 'Baloo 2', sans-serif;
 `
 
 export const Container = styled.div`
@@ -25,7 +28,7 @@ export const AdressAndPaymentContainer = styled.div`
 export const CheckoutContainer = styled.main`
   display: flex;
   flex-wrap: wrap;
-  max-width: 74rem;
+  max-width: 75rem;
   align-items: flex-start;
   justify-content: space-around;
   margin: 0 auto;
@@ -147,6 +150,11 @@ const BaseButton = styled.button`
 
   &:hover {
     filter: brightness(0.9);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${(props) => props.theme['purple-900']};
   }
 `
 
