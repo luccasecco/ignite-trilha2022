@@ -94,27 +94,13 @@ export const CardContainer = styled.div`
   }
 `
 
-const BaseButton = styled.button`
+export const CartButton = styled.button`
   border: 0;
+
   background-color: ${(props) => props.theme['gray-300']};
   cursor: pointer;
   color: ${(props) => props.theme['purple-900']};
   font-size: 1rem;
-`
-
-export const MinusButton = styled(BaseButton)`
-  width: 1.8rem;
-  height: 1.8rem;
-`
-
-export const PlusButton = styled(BaseButton)`
-  width: 1.8rem;
-  height: 1.8rem;
-`
-
-export const CartButton = styled(BaseButton)`
-  border: 0;
-  background: red;
   height: 1.8rem;
   background: transparent;
 `

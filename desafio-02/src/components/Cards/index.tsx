@@ -1,7 +1,8 @@
 import { ShoppingCartSimple } from 'phosphor-react'
-import { CardContainer, CartButton, MinusButton, PlusButton } from './styles'
+import { CardContainer, CartButton } from './styles'
 
 import api from '../../services/api'
+import { QuantityButton } from '../QuantityButton'
 
 // interface CardsProps {
 //   id: number
@@ -33,10 +34,7 @@ export function Cards() {
               <div>
                 <p>{coffee.price}</p>
 
-                <p>
-                  <MinusButton>-</MinusButton>1<PlusButton>+</PlusButton>
-                </p>
-
+                <QuantityButton />
                 <CartButton>
                   <ShoppingCartSimple size={28} />
                 </CartButton>
@@ -56,9 +54,7 @@ export function Cards() {
               <div>
                 <p>{coffee.price}</p>
 
-                <p>
-                  <MinusButton>-</MinusButton>1<PlusButton>+</PlusButton>
-                </p>
+                <QuantityButton />
 
                 <CartButton>
                   <ShoppingCartSimple size={28} />
