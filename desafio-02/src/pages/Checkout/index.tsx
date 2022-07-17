@@ -5,6 +5,8 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+import { SelectedCoffee } from '../../components/SelectedCoffee'
+import { Total } from '../../components/Total/Total'
 import {
   CheckoutContainer,
   FormContainer,
@@ -88,8 +90,9 @@ export function Checkout() {
           </PaymentContainer>
         </AdressAndPaymentContainer>
         <SelectedCoffeeContainer>
-          <p>Café selecionado 1 </p>
-          <p>Café selecionado 2 </p>
+          <SelectedCoffee />
+          <SelectedCoffee />
+          <Total />
         </SelectedCoffeeContainer>
       </Container>
     </>

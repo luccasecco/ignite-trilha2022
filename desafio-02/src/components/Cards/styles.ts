@@ -69,9 +69,10 @@ export const CardContainer = styled.div`
       max-width: 5rem;
       height: 1.8rem;
       margin-top: 1rem;
+
       display: flex;
       align-items: center;
-      /* justify-content: space-around; */
+
       background-color: ${(props) => props.theme['gray-300']};
       color: ${(props) => props.theme['gray-900']};
       border-radius: 6px;
