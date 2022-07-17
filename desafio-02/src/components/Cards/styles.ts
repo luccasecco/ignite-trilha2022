@@ -5,6 +5,7 @@ export const CardContainer = styled.div`
   height: 19.375rem;
   background: ${(props) => props.theme['gray-100']};
   margin: 2rem auto;
+  padding: 0.8rem;
 
   border-top-right-radius: 36px;
   border-bottom-left-radius: 36px;
@@ -14,7 +15,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
 
   img {
-    margin-top: -1rem;
+    margin-top: -1.8rem;
   }
 
   span {
@@ -53,7 +54,7 @@ export const CardContainer = styled.div`
     position: relative;
     display: flex;
     align-items: flex-end;
-    margin-top: 2.5rem;
+    margin-top: 0.8rem;
     gap: 1rem;
 
     p:nth-of-type(1) {

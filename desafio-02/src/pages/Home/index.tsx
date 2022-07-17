@@ -48,13 +48,6 @@ export function Home() {
       </HomeContainer>
       <OptionsContainer>
         <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
       </OptionsContainer>
     </ContentHome>
   )
