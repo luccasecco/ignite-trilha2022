@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.main`
   max-width: 16rem;
   height: 19.375rem;
   background: ${(props) => props.theme['gray-100']};
@@ -51,9 +51,9 @@ export const CardContainer = styled.div`
   }
 
   div {
-    position: relative;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
     margin-top: 0.8rem;
     gap: 1rem;
 
@@ -65,34 +65,10 @@ export const CardContainer = styled.div`
 
       color: ${(props) => props.theme['gray-500']};
     }
-
-    p {
-      max-width: 5rem;
-      height: 1.8rem;
-      margin-top: 1rem;
-
-      display: flex;
-      align-items: center;
-
-      background-color: ${(props) => props.theme['gray-300']};
-      color: ${(props) => props.theme['gray-900']};
-      border-radius: 6px;
-      font-size: 1rem;
-      font-family: 'Roboto';
-      padding: 0.2rem;
-      line-height: 0;
-    }
-
-    svg {
-      background-color: ${(props) => props.theme['purple-900']};
-      color: ${(props) => props.theme.white};
-      padding: 0.3rem;
-
-      border-radius: 6px;
-      line-height: 0;
-    }
   }
 `
+
+export const PriceOptionsContainer = styled.div``
 
 export const CartButton = styled.button`
   border: 0;
@@ -103,4 +79,19 @@ export const CartButton = styled.button`
   font-size: 1rem;
   height: 1.8rem;
   background: transparent;
+
+  svg {
+    background-color: ${(props) => props.theme['purple-900']};
+    color: ${(props) => props.theme.white};
+    padding: 0.3rem;
+    margin-left: 0.5rem;
+
+    border-radius: 6px;
+    line-height: 0;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
 `
