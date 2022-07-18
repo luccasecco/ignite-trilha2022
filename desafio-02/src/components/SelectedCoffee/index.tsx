@@ -1,4 +1,8 @@
+import { useCart } from '../../hooks/useCart'
 import { Trash } from 'phosphor-react'
+import { formatPrice } from '../../util/format'
+import { NavLink } from 'react-router-dom'
+
 import {
   QuantityContainer,
   SelectedCoffeeContainer,
@@ -6,29 +10,93 @@ import {
   ButtonContainer,
   MinusButton,
   PlusButton,
+  TotalContainer,
+  CheckButton,
+  CoffeeCard,
 } from './styles'
-import coffeImg from '../../assets/expresso.svg'
+
+interface Product {
+  id: number
+  name: string
+  price: number
+  imgUrl: string
+  amount: number
+}
 
 export function SelectedCoffee() {
-  return (
-    <>
-      <SelectedCoffeeContainer>
-        <img src={coffeImg} alt="" />
-        <QuantityContainer>
-          <h1>Expresso Tradicional</h1>
-          <ButtonContainer>
-            <p>
-              <MinusButton>-</MinusButton>1<PlusButton>+</PlusButton>
-            </p>
+  const { cart, removeProduct, updateProductAmount } = useCart()
 
-            <ButtonRemove>
-              <Trash size={20} />
-              Remover
-            </ButtonRemove>
-          </ButtonContainer>
-        </QuantityContainer>
-        <span>R$ 9,90</span>
-      </SelectedCoffeeContainer>
-    </>
+  const cartFormatted = cart.map((product) => ({
+    ...product,
+    priceFormatted: formatPrice(product.price),
+    subTotal: formatPrice(product.price * product.amount),
+  }))
+
+  const total = formatPrice(
+    cart.reduce((sumTotal, product) => {
+      return sumTotal + product.amount * product.price
+    }, 0),
+  )
+
+  function handleProductIncrement(product: Product) {
+    updateProductAmount({ productId: product.id, amount: product.amount + 1 })
+  }
+
+  function handleProductDecrement(product: Product) {
+    updateProductAmount({ productId: product.id, amount: product.amount - 1 })
+  }
+
+  function handleRemoveProduct(productId: number) {
+    removeProduct(productId)
+  }
+
+  return (
+    <SelectedCoffeeContainer>
+      {cartFormatted.map((product) => (
+        <div key={product.id}>
+          <CoffeeCard>
+            <img src={product.imgUrl} alt="" />
+            <QuantityContainer>
+              <h1>{product.name}</h1>
+              <ButtonContainer>
+                <MinusButton
+                  type="button"
+                  disabled={product.amount <= 1}
+                  onClick={() => handleProductDecrement(product)}
+                >
+                  -
+                </MinusButton>
+                <input type="text" readOnly value={product.amount} />
+                <PlusButton onClick={() => handleProductIncrement(product)}>
+                  +
+                </PlusButton>
+                <ButtonRemove onClick={() => handleRemoveProduct(product.id)}>
+                  <Trash size={20} />
+                  Remover
+                </ButtonRemove>
+              </ButtonContainer>
+            </QuantityContainer>
+            <span>{product.price}</span>
+          </CoffeeCard>
+        </div>
+      ))}
+      {cart.map((product) => (
+        <TotalContainer key={product.id}>
+          <div>
+            <p>Total de itens</p>
+            <p>Entrega</p>
+            <h1>Total</h1>
+          </div>
+          <div>
+            <p>{product.price}</p>
+            <p>xxx</p>
+            <p>{product.price}</p>
+          </div>
+        </TotalContainer>
+      ))}
+      <NavLink to="/success" title="Sucesso">
+        <CheckButton>Confirmar pedido</CheckButton>
+      </NavLink>
+    </SelectedCoffeeContainer>
   )
 }

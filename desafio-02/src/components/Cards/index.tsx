@@ -48,7 +48,15 @@ export function Cards() {
   return (
     <>
       {products.map(
-        ({ id, imgUrl, name, description, price, type, type2 }: Product) => {
+        ({
+          id,
+          imgUrl,
+          name,
+          description,
+          priceFormatted,
+          type,
+          type2,
+        }: ProductFormatted) => {
           if (type2) {
             return (
               <CardContainer key={id}>
@@ -61,7 +69,7 @@ export function Cards() {
                 <p>{description}</p>
 
                 <div>
-                  <p>{price}</p>
+                  <p>{priceFormatted}</p>
                   <button type="button" onClick={() => handleAddProduct(id)}>
                     <ShoppingCart size={23} />
                   </button>
@@ -79,8 +87,8 @@ export function Cards() {
                 <p>{description}</p>
 
                 <div>
-                  <p>{price}</p>
-                  <button>
+                  <p>{priceFormatted}</p>
+                  <button type="button" onClick={() => handleAddProduct(id)}>
                     <ShoppingCart size={23} />
                   </button>
                 </div>

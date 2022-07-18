@@ -64,7 +64,7 @@
       "name": "Expresso Tradicional",
       "type": "tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/57/b1/MNuuksuj_o.png"
     },
     {
@@ -72,7 +72,7 @@
       "name": "Expresso Americano",
       "type": "tradicional",
       "description": "Expresso diluído, menos intenso que o tradicional",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/cf/38/3n1KSIJk_o.png"
     },
     {
@@ -80,7 +80,7 @@
       "name": "Expresso Cremoso",
       "type": "tradicional",
       "description": "Café expresso tradicional com espuma cremosa",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/4a/e8/ociW6UIx_o.png"
     },
     {
@@ -89,7 +89,7 @@
       "type": "tradicional",
       "type2": "gelado",
       "description": "Bebida preparada com café expresso e cubos de gelo",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/7e/c3/4ToE9iBL_o.png"
     },
     {
@@ -98,7 +98,7 @@
       "type": "tradicional",
       "type2": "com leite",
       "description": "Meio a meio de expresso tradicional com leite vaporizado",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/f7/ed/iKcq4CVn_o.png"
     },
     {
@@ -107,7 +107,7 @@
       "type": "tradicional",
       "type2": "com leite",
       "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/43/b9/e8VsGK0Q_o.png"
     },
     {
@@ -116,7 +116,7 @@
       "type": "tradicional",
       "type2": "com leite",
       "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/ad/fe/rvimuNa2_o.png"
     },
     {
@@ -125,7 +125,7 @@
       "type": "tradicional",
       "type2": "com leite",
       "description": "Café expresso misturado com um pouco de leite quente e espuma",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/77/f3/89YErIXS_o.png"
     },
     {
@@ -134,7 +134,7 @@
       "type": "tradicional",
       "type2": "com leite",
       "description": "Café expresso com calda de chocolate, pouco leite e espuma",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/ed/e0/p7zlX5lQ_o.png"
     },
     {
@@ -143,7 +143,7 @@
       "type": "tradicional",
       "type2": "com leite",
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/60/8f/24fLk9I7_o.png"
     },
     {
@@ -152,7 +152,7 @@
       "type": "especial",
       "type2": "alcoólico",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/7d/b7/MAJzV2TW_o.png"
     },
     {
@@ -160,7 +160,7 @@
       "name": "Havaiano",
       "type": "especial",
       "description": "Bebida adocicada preparada com café e leite de coco",
-      "price": "R$9,90",      
+      "price": 9.90,      
       "imgUrl": "https://images2.imgbox.com/06/8f/W9XmEUcv_o.png"
     },
     {
@@ -168,7 +168,7 @@
       "name": "Árabe",
       "type": "especial",
       "description": "Bebida preparada com grãos de café árabe e especiarias",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/6f/fe/PqqGNyj1_o.png"
     },
     {
@@ -177,7 +177,7 @@
       "type": "especial",
       "type2": "alcoólico",
       "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
-      "price": "R$9,90",
+      "price": 9.90,
       "imgUrl": "https://images2.imgbox.com/6a/62/5KZPtmPq_o.png"
     }
   ]

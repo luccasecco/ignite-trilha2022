@@ -1,6 +1,5 @@
 import { SelectedCoffee } from '../../components/SelectedCoffee'
 
-import { Total } from '../../components/Total/Total'
 import { Form } from '../../components/Form/Form'
 import { Payment } from '../../components/Payment/Payment'
 
@@ -31,8 +30,6 @@ export function Checkout() {
         </AdressAndPaymentContainer>
         <SelectedCoffeeContainer>
           <SelectedCoffee />
-          <SelectedCoffee />
-          <Total />
         </SelectedCoffeeContainer>
       </Container>
     </>
