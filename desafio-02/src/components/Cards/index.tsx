@@ -1,11 +1,11 @@
-import { ShoppingCartSimple } from 'phosphor-react'
-import { CardContainer, CartButton } from './styles'
+import { CardContainer } from './styles'
 import { formatPrice } from '../../util/format'
 import { useCart } from '../../hooks/useCart'
 
 import { api } from '../../services/api'
-import { QuantityButton } from '../QuantityButton'
+
 import { useEffect, useState } from 'react'
+import { ShoppingCart } from 'phosphor-react'
 
 interface Product {
   id: number
@@ -62,12 +62,9 @@ export function Cards() {
 
                 <div>
                   <p>{price}</p>
-
-                  <QuantityButton />
-
-                  <CartButton>
-                    <ShoppingCartSimple size={28} />
-                  </CartButton>
+                  <button type="button" onClick={() => handleAddProduct(id)}>
+                    <ShoppingCart size={23} />
+                  </button>
                 </div>
               </CardContainer>
             )
@@ -83,15 +80,9 @@ export function Cards() {
 
                 <div>
                   <p>{price}</p>
-
-                  <QuantityButton />
-
-                  <CartButton
-                    type="button"
-                    onClick={() => handleAddProduct(id)}
-                  >
-                    <ShoppingCartSimple size={28} />
-                  </CartButton>
+                  <button>
+                    <ShoppingCart size={23} />
+                  </button>
                 </div>
               </CardContainer>
             )

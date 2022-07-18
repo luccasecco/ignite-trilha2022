@@ -1,32 +1,16 @@
-import {
-  Bank,
-  CreditCard,
-  CurrencyDollar,
-  MapPinLine,
-  Money,
-} from 'phosphor-react'
 import { SelectedCoffee } from '../../components/SelectedCoffee'
+
 import { Total } from '../../components/Total/Total'
+import { Form } from '../../components/Form/Form'
+import { Payment } from '../../components/Payment/Payment'
+
 import {
   CheckoutContainer,
-  FormContainer,
-  InputCep,
-  InputCity,
-  InputComplement,
-  InputDistrict,
-  InputFederativeUnit,
-  InputNumberOfHouse,
-  InputStreet,
   PaymentContainer,
-  HeaderContainer,
   TitleContainer,
   SelectedCoffeeContainer,
   Container,
   AdressAndPaymentContainer,
-  ButtonCredit,
-  ButtonDebit,
-  ButtonMoney,
-  ButtonContainer,
 } from './styles'
 
 export function Checkout() {
@@ -39,54 +23,10 @@ export function Checkout() {
       <Container>
         <AdressAndPaymentContainer>
           <CheckoutContainer>
-            <FormContainer>
-              <HeaderContainer>
-                <MapPinLine size={24} />
-
-                <p>
-                  Endereço de Entrega <br />
-                  <b>Informe o endereço onde deseja receber seu pedido</b>
-                </p>
-              </HeaderContainer>
-              <form action="">
-                <InputCep type="text" placeholder="CEP" />
-                <br />
-                <InputStreet type="text" placeholder="Rua" />
-                <br />
-                <InputNumberOfHouse type="text" placeholder="Número" />
-                <InputComplement type="text" placeholder="Complemento" />
-                <br />
-                <InputDistrict type="text" placeholder="Bairro" />
-                <InputCity type="text" placeholder="Cidade" />
-                <InputFederativeUnit type="text" placeholder="UF" />
-              </form>
-            </FormContainer>
+            <Form />
           </CheckoutContainer>
           <PaymentContainer>
-            <HeaderContainer>
-              <CurrencyDollar size={24} />
-              <p>
-                Pagamento <br />
-                <b>
-                  O pagamento é feito na entrega. Escolha a forma que deseja
-                  pagar
-                </b>
-              </p>
-            </HeaderContainer>
-            <ButtonContainer>
-              <ButtonCredit>
-                <CreditCard size={16} />
-                Cartão de crédito
-              </ButtonCredit>
-              <ButtonDebit>
-                <Bank size={16} />
-                Cartão de débito
-              </ButtonDebit>
-              <ButtonMoney>
-                <Money size={16} />
-                Dinheiro
-              </ButtonMoney>
-            </ButtonContainer>
+            <Payment />
           </PaymentContainer>
         </AdressAndPaymentContainer>
         <SelectedCoffeeContainer>

@@ -21,7 +21,7 @@ interface CartContextData {
 
 const CartContext = createContext<CartContextData>({} as CartContextData)
 
-export function CartProvider({ children }: CartProviderProps): JSX.Element {
+export function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<Product[]>(() => {
     const storagedCart = localStorage.getItem('@RocketCoffeeDelivery:cart')
 

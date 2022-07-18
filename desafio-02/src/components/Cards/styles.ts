@@ -15,7 +15,7 @@ export const CardContainer = styled.main`
   flex-direction: column;
 
   img {
-    margin-top: -1.8rem;
+    margin-top: -3rem;
   }
 
   span {
@@ -52,7 +52,7 @@ export const CardContainer = styled.main`
 
   div {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     margin-top: 0.8rem;
     gap: 1rem;
@@ -65,33 +65,23 @@ export const CardContainer = styled.main`
 
       color: ${(props) => props.theme['gray-500']};
     }
-  }
-`
 
-export const PriceOptionsContainer = styled.div``
+    button {
+      background-color: ${(props) => props.theme['purple-900']};
+      color: ${(props) => props.theme.white};
 
-export const CartButton = styled.button`
-  border: 0;
+      padding: 0.4rem;
 
-  background-color: ${(props) => props.theme['gray-300']};
-  cursor: pointer;
-  color: ${(props) => props.theme['purple-900']};
-  font-size: 1rem;
-  height: 1.8rem;
-  background: transparent;
+      border: 0;
+      border-radius: 4px;
+      line-height: 0;
 
-  svg {
-    background-color: ${(props) => props.theme['purple-900']};
-    color: ${(props) => props.theme.white};
-    padding: 0.3rem;
-    margin-left: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease-out;
 
-    border-radius: 6px;
-    line-height: 0;
-    transition: filter 0.2s;
-
-    &:hover {
-      filter: brightness(0.9);
+      &:hover {
+        background-color: ${(props) => props.theme['purple-500']};
+      }
     }
   }
 `
