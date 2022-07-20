@@ -1,10 +1,27 @@
 import logoImg from '../../assets/logo.svg'
-import { MapPin, ShoppingCart } from 'phosphor-react'
+import { MapPin } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
 
 import { HeaderContainer } from './styles'
+import { ButtonCart } from '../ButtonCart/ButtonCart'
+import { useCart } from '../../hooks/useCart'
+
+interface CartItemsAmount {
+  [key: number]: number
+}
 
 export function Header() {
+  const { cart } = useCart()
+
+  const cartItemsAmount = cart.reduce((sumAmount, product) => {
+    const newSumAmount = { ...sumAmount }
+    newSumAmount[product.id] = product.amount
+
+    return newSumAmount
+  }, {} as CartItemsAmount)
+
+  console.log(cartItemsAmount)
+
   return (
     <HeaderContainer>
       <NavLink to="/">
@@ -17,7 +34,7 @@ export function Header() {
         </button>
         <NavLink to="/checkout" title="Checkout">
           {' '}
-          <ShoppingCart size={22} />
+          <ButtonCart />
         </NavLink>
       </nav>
     </HeaderContainer>

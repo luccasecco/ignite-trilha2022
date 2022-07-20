@@ -1,11 +1,10 @@
-import { CardContainer } from './styles'
 import { formatPrice } from '../../util/format'
 import { useCart } from '../../hooks/useCart'
-
+import { ButtonCart } from '../ButtonCart/ButtonCart'
+import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
 
-import { useEffect, useState } from 'react'
-import { ShoppingCart } from 'phosphor-react'
+import { CardContainer } from './styles'
 
 interface Product {
   id: number
@@ -22,9 +21,13 @@ interface ProductFormatted extends Product {
   priceFormatted: string
 }
 
+interface CartItemsAmount {
+  [key: number]: number
+}
+
 export function Cards() {
   const [products, setProducts] = useState<ProductFormatted[]>([])
-  const { addProduct } = useCart()
+  const { addProduct, cart } = useCart()
 
   useEffect(() => {
     async function loadProducts() {
@@ -44,6 +47,17 @@ export function Cards() {
   function handleAddProduct(id: number) {
     addProduct(id)
   }
+
+  const cartItemsAmount = cart.reduce((sumAmount, product) => {
+    const newSumAmount = { ...sumAmount }
+    newSumAmount[product.id] = product.amount
+
+    return newSumAmount
+  }, {} as CartItemsAmount)
+
+  // const quantityCart = products.map((product) => (
+  //   <p key={product.id}>{cartItemsAmount[product.id]}</p>
+  // ))
 
   return (
     <>
@@ -70,9 +84,8 @@ export function Cards() {
 
                 <div>
                   <p>{priceFormatted}</p>
-                  <button type="button" onClick={() => handleAddProduct(id)}>
-                    <ShoppingCart size={23} />
-                  </button>
+                  <ButtonCart onUpdateQuantity={() => handleAddProduct(id)} />
+                  <span>{cartItemsAmount[id] || 0}</span>
                 </div>
               </CardContainer>
             )
@@ -88,9 +101,8 @@ export function Cards() {
 
                 <div>
                   <p>{priceFormatted}</p>
-                  <button type="button" onClick={() => handleAddProduct(id)}>
-                    <ShoppingCart size={23} />
-                  </button>
+                  <ButtonCart onUpdateQuantity={() => handleAddProduct(id)} />
+                  <span>{cartItemsAmount[id] || 0}</span>
                 </div>
               </CardContainer>
             )

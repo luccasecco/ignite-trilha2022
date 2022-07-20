@@ -22,23 +22,20 @@ export const HeaderContainer = styled.header`
       padding: 0.5rem;
       border-radius: 8px;
       border: 0;
+      cursor: pointer;
 
       background: ${(props) => props.theme['purple-100']};
       color: ${(props) => props.theme['purple-900']};
+
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: ${(props) => props.theme['yellow-100']};
+      }
     }
 
-    a {
-      display: flex;
-      align-items: center;
-      padding: 0.5rem;
-      border-radius: 8px;
-      border: 0;
-      background: ${(props) => props.theme['yellow-100']};
-
-      svg {
-        color: ${(props) => props.theme['yellow-500']};
-        opacity: 0.5;
-      }
+    svg {
+      color: ${(props) => props.theme['yellow-500']};
     }
   }
 `

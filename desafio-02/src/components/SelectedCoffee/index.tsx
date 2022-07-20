@@ -80,7 +80,19 @@ export function SelectedCoffee() {
           </CoffeeCard>
         </div>
       ))}
-      {cart.map((product) => (
+      <TotalContainer>
+        <div>
+          {/* <p>Total de itens</p> */}
+          <p>Entrega</p>
+          <h1>Total</h1>
+        </div>
+        <div>
+          {/* <p>{}</p> */}
+          <p>R$3,50</p>
+          <p>{total}</p>
+        </div>
+      </TotalContainer>
+      {/* {cartFormatted.map((product) => (
         <TotalContainer key={product.id}>
           <div>
             <p>Total de itens</p>
@@ -88,12 +100,12 @@ export function SelectedCoffee() {
             <h1>Total</h1>
           </div>
           <div>
-            <p>{product.price}</p>
-            <p>xxx</p>
-            <p>{product.price}</p>
+            <p>{product.subTotal}</p>
+            <p>R$3,50</p>
+            <p>{total}</p>
           </div>
         </TotalContainer>
-      ))}
+      ))} */}
       <NavLink to="/success" title="Sucesso">
         <CheckButton>Confirmar pedido</CheckButton>
       </NavLink>
