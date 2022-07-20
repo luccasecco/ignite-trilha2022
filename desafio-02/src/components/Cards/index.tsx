@@ -55,10 +55,6 @@ export function Cards() {
     return newSumAmount
   }, {} as CartItemsAmount)
 
-  // const quantityCart = products.map((product) => (
-  //   <p key={product.id}>{cartItemsAmount[product.id]}</p>
-  // ))
-
   return (
     <>
       {products.map(

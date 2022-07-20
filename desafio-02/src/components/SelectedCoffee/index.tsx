@@ -34,7 +34,7 @@ export function SelectedCoffee() {
 
   const total = formatPrice(
     cart.reduce((sumTotal, product) => {
-      return sumTotal + product.amount * product.price
+      return sumTotal + product.amount * product.price + 3.5
     }, 0),
   )
 
@@ -76,36 +76,27 @@ export function SelectedCoffee() {
                 </ButtonRemove>
               </ButtonContainer>
             </QuantityContainer>
-            <span>{product.price}</span>
+            <span>{product.priceFormatted}</span>
           </CoffeeCard>
         </div>
       ))}
       <TotalContainer>
         <div>
-          {/* <p>Total de itens</p> */}
+          <p>Total de itens</p>
           <p>Entrega</p>
           <h1>Total</h1>
         </div>
         <div>
-          {/* <p>{}</p> */}
-          <p>R$3,50</p>
+          <p>
+            {cartFormatted.reduce((acc, product) => {
+              return acc + product.amount
+            }, 0)}
+          </p>
+          <p>R$ 3,50</p>
           <p>{total}</p>
         </div>
       </TotalContainer>
-      {/* {cartFormatted.map((product) => (
-        <TotalContainer key={product.id}>
-          <div>
-            <p>Total de itens</p>
-            <p>Entrega</p>
-            <h1>Total</h1>
-          </div>
-          <div>
-            <p>{product.subTotal}</p>
-            <p>R$3,50</p>
-            <p>{total}</p>
-          </div>
-        </TotalContainer>
-      ))} */}
+
       <NavLink to="/success" title="Sucesso">
         <CheckButton>Confirmar pedido</CheckButton>
       </NavLink>

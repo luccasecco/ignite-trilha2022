@@ -65,5 +65,13 @@ export const CardContainer = styled.main`
 
       color: ${(props) => props.theme['gray-500']};
     }
+
+    button {
+      transition: background-color 0.2s ease-out;
+
+      &:hover {
+        background-color: ${(props) => props.theme['purple-500']};
+      }
+    }
   }
 `

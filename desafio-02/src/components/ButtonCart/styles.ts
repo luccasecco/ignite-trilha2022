@@ -12,10 +12,5 @@ export const ButtonContainer = styled.div`
     line-height: 0;
 
     cursor: pointer;
-    transition: background-color 0.2s ease-out;
-
-    &:hover {
-      background-color: ${(props) => props.theme['purple-500']};
-    }
   }
 `
