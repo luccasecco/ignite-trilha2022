@@ -35,7 +35,7 @@ export const CheckoutContainer = styled.main`
   border-radius: 4px;
 `
 
-const BaseConatiner = styled.div`
+const BaseContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 2rem;
@@ -44,7 +44,7 @@ const BaseConatiner = styled.div`
   background: ${(props) => props.theme['gray-100']};
 `
 
-export const SelectedCoffeeContainer = styled(BaseConatiner)`
+export const SelectedCoffeeContainer = styled(BaseContainer)`
   min-width: 28rem;
   min-height: 31.125rem;
 
@@ -52,10 +52,8 @@ export const SelectedCoffeeContainer = styled(BaseConatiner)`
   border-bottom-left-radius: 44px;
 `
 
-export const PaymentContainer = styled(BaseConatiner)`
-  max-width: 40rem;
+export const PaymentContainer = styled(BaseContainer)`
   margin-top: 0.75rem;
-  border-radius: 8px;
 
   svg {
     color: ${(props) => props.theme['purple-900']};

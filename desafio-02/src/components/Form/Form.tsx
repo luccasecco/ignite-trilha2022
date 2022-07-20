@@ -1,4 +1,7 @@
 import { MapPinLine } from 'phosphor-react'
+import { useForm } from 'react-hook-form'
+import { Payment } from '../Payment/Payment'
+
 import {
   FormContainer,
   HeaderContainer,
@@ -9,9 +12,18 @@ import {
   InputDistrict,
   InputCity,
   InputFederativeUnit,
+  CheckButton,
+  InputContainer,
+  PaymentContainer,
 } from './styles'
 
 export function Form() {
+  const { register, handleSubmit } = useForm()
+
+  function handleFormSubmit(data: any) {
+    console.log(data)
+  }
+
   return (
     <FormContainer>
       <HeaderContainer>
@@ -21,17 +33,39 @@ export function Form() {
           <b>Informe o endereço onde deseja receber seu pedido</b>
         </p>
       </HeaderContainer>
-      <form action="">
-        <InputCep type="text" placeholder="CEP" />
-        <br />
-        <InputStreet type="text" placeholder="Rua" />
-        <br />
-        <InputNumberOfHouse type="text" placeholder="Número" />
-        <InputComplement type="text" placeholder="Complemento" />
-        <br />
-        <InputDistrict type="text" placeholder="Bairro" />
-        <InputCity type="text" placeholder="Cidade" />
-        <InputFederativeUnit type="text" placeholder="UF" />
+      <form onSubmit={handleSubmit(handleFormSubmit)} action="">
+        <InputContainer>
+          <InputCep type="text" placeholder="CEP" {...register('cep')} />
+          <br />
+          <InputStreet type="text" placeholder="Rua" {...register('street')} />
+          <br />
+          <InputNumberOfHouse
+            type="text"
+            placeholder="Número"
+            {...register('number', { valueAsNumber: true })}
+          />
+          <InputComplement
+            type="text"
+            placeholder="Complemento"
+            {...register('complement')}
+          />
+          <br />
+          <InputDistrict
+            type="text"
+            placeholder="Bairro"
+            {...register('district')}
+          />
+          <InputCity type="text" placeholder="Cidade" {...register('city')} />
+          <InputFederativeUnit
+            type="text"
+            placeholder="UF"
+            {...register('UF')}
+          />
+        </InputContainer>
+        <PaymentContainer>
+          <Payment />
+          <CheckButton>Confirmar endereço de entrega</CheckButton>
+        </PaymentContainer>
       </form>
     </FormContainer>
   )

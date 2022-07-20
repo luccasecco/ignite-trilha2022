@@ -1,11 +1,9 @@
 import { SelectedCoffee } from '../../components/SelectedCoffee'
 
 import { Form } from '../../components/Form/Form'
-import { Payment } from '../../components/Payment/Payment'
 
 import {
   CheckoutContainer,
-  PaymentContainer,
   TitleContainer,
   SelectedCoffeeContainer,
   Container,
@@ -24,9 +22,6 @@ export function Checkout() {
           <CheckoutContainer>
             <Form />
           </CheckoutContainer>
-          <PaymentContainer>
-            <Payment />
-          </PaymentContainer>
         </AdressAndPaymentContainer>
         <SelectedCoffeeContainer>
           <SelectedCoffee />
