@@ -81,27 +81,28 @@ export function SelectedCoffee() {
         </div>
       ))}
       {cartSize && (
-        <TotalContainer>
-          <div>
-            <p>Total de itens</p>
-            <p>Entrega</p>
-            <h1>Total</h1>
-          </div>
-          <div>
-            <p>
-              {cartFormatted.reduce((acc, product) => {
-                return acc + product.amount
-              }, 0)}
-            </p>
-            <p>R$ 3,50</p>
-            <p>{total}</p>
-          </div>
-        </TotalContainer>
+        <>
+          <TotalContainer>
+            <div>
+              <p>Total de itens</p>
+              <p>Entrega</p>
+              <h1>Total</h1>
+            </div>
+            <div>
+              <p>
+                {cartFormatted.reduce((acc, product) => {
+                  return acc + product.amount
+                }, 0)}
+              </p>
+              <p>R$ 3,50</p>
+              <p>{total}</p>
+            </div>
+          </TotalContainer>
+          <NavLink to="/success" title="Sucesso">
+            <CheckButton>Confirmar pedido</CheckButton>
+          </NavLink>
+        </>
       )}
-
-      <NavLink to="/success" title="Sucesso">
-        <CheckButton>Confirmar pedido</CheckButton>
-      </NavLink>
     </SelectedCoffeeContainer>
   )
 }

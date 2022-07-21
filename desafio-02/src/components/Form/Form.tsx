@@ -18,26 +18,43 @@ import {
   InputContainer,
   PaymentContainer,
 } from './styles'
+import { useState } from 'react'
 
 const newAdressValidationSchema = zod.object({
   cep: zod.string().min(8, 'Informe o CEP'),
   street: zod.string().min(5, 'Informe o nome da sua rua'),
+  city: zod.string().min(5, 'Informe o nome da sua cidade'),
+  complement: zod.string().min(5, 'Informe o complemento'),
   number: zod.string().min(1, 'Informe o número da sua residência'),
   district: zod.string().min(1, 'Informe o nome do seu bairro'),
-  UF: zod.string().min(1, 'Informe a UF da sua residência'),
+  uf: zod.string().min(1, 'Informe a UF da sua residência'),
 })
 
 interface NewAdressFormProps {
   cep: string
   street: string
   number: string
-  complement?: string
+  complement?: string | undefined
   city: string
   district: string
-  UF: string
+  uf: string
+}
+
+interface Adress {
+  id: string
+  cep: string
+  street: string
+  number: string
+  complement?: string | undefined
+  city: string
+  district: string
+  uf: string
 }
 
 export function Form() {
+  const [adress, setAdress] = useState<Adress[]>([])
+  const [activeAdressId, setActiveAdresId] = useState<string | null>(null)
+
   const { register, handleSubmit, formState, reset } =
     useForm<NewAdressFormProps>({
       resolver: zodResolver(newAdressValidationSchema),
@@ -45,16 +62,34 @@ export function Form() {
         cep: '',
         street: '',
         number: '',
+        city: '',
+        complement: '',
         district: '',
-        UF: '',
+        uf: '',
       },
     })
 
   function handleFormSubmit(data: NewAdressFormProps) {
-    console.log(data)
+    const id = String(new Date().getTime())
+
+    const newAdress = {
+      id,
+      cep: data.cep,
+      street: data.street,
+      number: data.number,
+      complement: data.complement,
+      district: data.district,
+      city: data.city,
+      uf: data.uf,
+    }
+
+    setAdress((state) => [...state, newAdress])
+    setActiveAdresId(id)
     reset()
   }
 
+  const activeAdress = adress.find((adress) => adress.id === activeAdressId)
+  console.log(activeAdress)
   console.log(formState.errors)
 
   return (
@@ -109,7 +144,7 @@ export function Form() {
           <InputFederativeUnit
             type="text"
             placeholder="UF"
-            {...register('UF')}
+            {...register('uf')}
             required
           />
         </InputContainer>
