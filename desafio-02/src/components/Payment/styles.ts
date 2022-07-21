@@ -49,8 +49,9 @@ const BaseButton = styled.button`
 
 export const ButtonContainer = styled.div`
   display: flex;
+  width: 35rem;
   gap: 1.33rem;
-  margin-top: 2rem;
+  margin: 2rem 0 0;
   align-items: center;
 `
 

@@ -116,7 +116,7 @@ export const PaymentContainer = styled(BaseConatiner)`
   margin-top: 1rem;
   border-radius: 8px;
   text-align: left;
-  padding: 0.8rem;
+  padding: 0.5rem;
 
   svg {
     color: ${(props) => props.theme['purple-900']};

@@ -25,7 +25,7 @@ interface Product {
 
 export function SelectedCoffee() {
   const { cart, removeProduct, updateProductAmount } = useCart()
-
+  const cartSize = cart.length
   const cartFormatted = cart.map((product) => ({
     ...product,
     priceFormatted: formatPrice(product.price),
@@ -80,22 +80,24 @@ export function SelectedCoffee() {
           </CoffeeCard>
         </div>
       ))}
-      <TotalContainer>
-        <div>
-          <p>Total de itens</p>
-          <p>Entrega</p>
-          <h1>Total</h1>
-        </div>
-        <div>
-          <p>
-            {cartFormatted.reduce((acc, product) => {
-              return acc + product.amount
-            }, 0)}
-          </p>
-          <p>R$ 3,50</p>
-          <p>{total}</p>
-        </div>
-      </TotalContainer>
+      {cartSize && (
+        <TotalContainer>
+          <div>
+            <p>Total de itens</p>
+            <p>Entrega</p>
+            <h1>Total</h1>
+          </div>
+          <div>
+            <p>
+              {cartFormatted.reduce((acc, product) => {
+                return acc + product.amount
+              }, 0)}
+            </p>
+            <p>R$ 3,50</p>
+            <p>{total}</p>
+          </div>
+        </TotalContainer>
+      )}
 
       <NavLink to="/success" title="Sucesso">
         <CheckButton>Confirmar pedido</CheckButton>

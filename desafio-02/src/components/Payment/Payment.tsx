@@ -21,15 +21,15 @@ export function Payment() {
         </p>
       </HeaderContainer>
       <ButtonContainer>
-        <ButtonCredit>
+        <ButtonCredit value="Cartão de crédito">
           <CreditCard size={16} />
           Cartão de crédito
         </ButtonCredit>
-        <ButtonDebit>
+        <ButtonDebit value="Cartão de débito">
           <Bank size={16} />
           Cartão de débito
         </ButtonDebit>
-        <ButtonMoney>
+        <ButtonMoney value="Dinheiro">
           <Money size={16} />
           Dinheiro
         </ButtonMoney>
