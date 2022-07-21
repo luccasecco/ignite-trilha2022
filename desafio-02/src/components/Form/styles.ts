@@ -38,7 +38,7 @@ export const FormContainer = styled(BaseConatiner)`
 `
 
 export const InputContainer = styled.div`
-  border-bottom: 1px solid ${(props) => props.theme['gray-400']};
+  border-bottom: 2px solid ${(props) => props.theme['gray-300']};
 `
 
 const BaseInput = styled.input`
@@ -126,3 +126,55 @@ export const PaymentContainer = styled(BaseConatiner)`
     margin: 1rem auto;
   }
 `
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  width: 35rem;
+  gap: 1.33rem;
+  margin: 2rem 0 0;
+  align-items: center;
+`
+
+const BaseInputPayment = styled.div`
+  width: 11.16rem;
+  height: 3.18rem;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 0.75rem;
+
+  border: 0;
+  background: ${(props) => props.theme['gray-300']};
+  border-radius: 6px;
+
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${(props) => props.theme['purple-900']};
+  }
+
+  input {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+`
+
+export const InputCredit = styled(BaseInputPayment)``
+export const InputDebit = styled(BaseInputPayment)``
+export const InputMoney = styled(BaseInputPayment)``

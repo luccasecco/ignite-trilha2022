@@ -11,6 +11,7 @@ interface CreateAdressData {
   number: string
   district: string
   uf: string
+  payment: string
 }
 
 interface CartProviderProps {
@@ -31,6 +32,7 @@ interface Adress {
   city: string
   district: string
   uf: string
+  payment: string
 }
 
 interface CartContextData {
@@ -168,6 +170,7 @@ export function CartProvider({ children }: CartProviderProps) {
       district: data.district,
       city: data.city,
       uf: data.uf,
+      payment: data.payment,
     }
 
     setAdress((state) => [...state, newAdress])

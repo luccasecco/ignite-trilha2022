@@ -80,7 +80,7 @@ export function SelectedCoffee() {
           </CoffeeCard>
         </div>
       ))}
-      {cartSize && (
+      {cartSize ? (
         <>
           <TotalContainer>
             <div>
@@ -102,6 +102,8 @@ export function SelectedCoffee() {
             <CheckButton>Confirmar pedido</CheckButton>
           </NavLink>
         </>
+      ) : (
+        ''
       )}
     </SelectedCoffeeContainer>
   )

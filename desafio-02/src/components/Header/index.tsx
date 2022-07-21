@@ -17,12 +17,12 @@ export function Header() {
       </NavLink>
       <nav>
         <p>
-          <MapPin size={22} /> Porto Alegre, RS
+          <MapPin size={22} /> Florianópolis, SC
         </p>
         <NavLink to="/checkout" title="Checkout">
           <ButtonCart />
         </NavLink>
-        <span>{cartSize !== 0 ? `${cartSize} ` : ``}</span>
+        {cartSize ? <span>{cartSize}</span> : ''}
       </nav>
     </HeaderContainer>
   )

@@ -49,7 +49,7 @@ export function Success() {
             <CurrencyDollar size={32} />
             <p>
               Pagamento na entrega <br />
-              <b>Cartão de Crédito</b>
+              <b>{activeAdress?.payment}</b>
             </p>
           </PaymentContent>
         </InfoSuccessContainer>
