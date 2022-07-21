@@ -1,6 +1,7 @@
 import { MapPinLine } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { Payment } from '../Payment/Payment'
+import { useCart } from '../../hooks/useCart'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 
@@ -18,7 +19,6 @@ import {
   InputContainer,
   PaymentContainer,
 } from './styles'
-import { useState } from 'react'
 
 const newAdressValidationSchema = zod.object({
   cep: zod.string().min(8, 'Informe o CEP'),
@@ -33,64 +33,50 @@ const newAdressValidationSchema = zod.object({
 interface NewAdressFormProps {
   cep: string
   street: string
-  number: string
-  complement?: string | undefined
   city: string
-  district: string
-  uf: string
-}
-
-interface Adress {
-  id: string
-  cep: string
-  street: string
-  number: string
   complement?: string | undefined
-  city: string
+  number: string
   district: string
   uf: string
 }
 
 export function Form() {
-  const [adress, setAdress] = useState<Adress[]>([])
-  const [activeAdressId, setActiveAdresId] = useState<string | null>(null)
+  const { createNewAdress } = useCart()
 
-  const { register, handleSubmit, formState, reset } =
-    useForm<NewAdressFormProps>({
-      resolver: zodResolver(newAdressValidationSchema),
-      defaultValues: {
-        cep: '',
-        street: '',
-        number: '',
-        city: '',
-        complement: '',
-        district: '',
-        uf: '',
-      },
-    })
+  const { register, handleSubmit } = useForm<NewAdressFormProps>({
+    resolver: zodResolver(newAdressValidationSchema),
+    defaultValues: {
+      cep: '',
+      street: '',
+      number: '',
+      city: '',
+      complement: '',
+      district: '',
+      uf: '',
+    },
+  })
 
-  function handleFormSubmit(data: NewAdressFormProps) {
-    const id = String(new Date().getTime())
+  // function handleFormSubmit(data: NewAdressFormProps) {
+  //   const id = String(new Date().getTime())
 
-    const newAdress = {
-      id,
-      cep: data.cep,
-      street: data.street,
-      number: data.number,
-      complement: data.complement,
-      district: data.district,
-      city: data.city,
-      uf: data.uf,
-    }
+  //   const newAdress = {
+  //     id,
+  //     cep: data.cep,
+  //     street: data.street,
+  //     number: data.number,
+  //     complement: data.complement,
+  //     district: data.district,
+  //     city: data.city,
+  //     uf: data.uf,
+  //   }
 
-    setAdress((state) => [...state, newAdress])
-    setActiveAdresId(id)
-    reset()
-  }
+  //   setAdress((state) => [...state, newAdress])
+  //   setActiveAdresId(id)
+  //   reset()
+  // }
 
-  const activeAdress = adress.find((adress) => adress.id === activeAdressId)
-  console.log(activeAdress)
-  console.log(formState.errors)
+  // const activeAdress = adress.find((adress) => adress.id === activeAdressId)
+  // console.log(activeAdress)
 
   return (
     <FormContainer>
@@ -101,7 +87,7 @@ export function Form() {
           <b>Informe o endereço onde deseja receber seu pedido</b>
         </p>
       </HeaderContainer>
-      <form onSubmit={handleSubmit(handleFormSubmit)} action="">
+      <form onSubmit={handleSubmit(createNewAdress)} action="">
         <InputContainer>
           <InputCep
             type="text"

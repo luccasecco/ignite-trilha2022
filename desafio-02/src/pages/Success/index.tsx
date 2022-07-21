@@ -1,4 +1,5 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { useCart } from '../../hooks/useCart'
 import deliveryImg from '../../assets/delivery.svg'
 
 import {
@@ -11,6 +12,8 @@ import {
 } from './styles'
 
 export function Success() {
+  const { activeAdress } = useCart()
+
   return (
     <>
       <TitleContainer>
@@ -24,9 +27,12 @@ export function Success() {
             <p>
               Entrega em{' '}
               <strong>
-                Rua joão Daniel Martinelli, 102
+                {activeAdress?.street}, {activeAdress?.number}
                 <br />
-                <b>Farrapos - Porto Alegre, RS</b>
+                <b>
+                  {activeAdress?.district} - {activeAdress?.city},{' '}
+                  {activeAdress?.uf}
+                </b>
               </strong>
             </p>
           </DeliveryContent>

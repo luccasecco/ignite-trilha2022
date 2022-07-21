@@ -3,6 +3,16 @@ import { toast } from 'react-toastify'
 import { api } from '../services/api'
 import { Product } from '../types'
 
+interface CreateAdressData {
+  cep: string
+  street: string
+  city: string
+  complement?: string | undefined
+  number: string
+  district: string
+  uf: string
+}
+
 interface CartProviderProps {
   children: ReactNode
 }
@@ -12,16 +22,33 @@ interface UpdateProductAmount {
   amount: number
 }
 
+interface Adress {
+  id: string
+  cep: string
+  street: string
+  number: string
+  complement?: string | undefined
+  city: string
+  district: string
+  uf: string
+}
+
 interface CartContextData {
   cart: Product[]
+  adress: Adress[] | undefined
+  activeAdress: Adress | undefined
   addProduct: (productId: number) => Promise<void>
   removeProduct: (productId: number) => void
   updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void
+  createNewAdress: (data: CreateAdressData) => void
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData)
 
 export function CartProvider({ children }: CartProviderProps) {
+  const [adress, setAdress] = useState<Adress[]>([])
+  const [activeAdressId, setActiveAdresId] = useState<string | null>(null)
+
   const [cart, setCart] = useState<Product[]>(() => {
     const storagedCart = localStorage.getItem('@RocketCoffeeDelivery:cart')
 
@@ -129,9 +156,38 @@ export function CartProvider({ children }: CartProviderProps) {
     }
   }
 
+  function createNewAdress(data: CreateAdressData) {
+    const id = String(new Date().getTime())
+
+    const newAdress = {
+      id,
+      cep: data.cep,
+      street: data.street,
+      number: data.number,
+      complement: data.complement,
+      district: data.district,
+      city: data.city,
+      uf: data.uf,
+    }
+
+    setAdress((state) => [...state, newAdress])
+    setActiveAdresId(id)
+    // reset()
+  }
+
+  const activeAdress = adress.find((adress) => adress.id === activeAdressId)
+
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, updateProductAmount }}
+      value={{
+        cart,
+        adress,
+        addProduct,
+        removeProduct,
+        updateProductAmount,
+        createNewAdress,
+        activeAdress,
+      }}
     >
       {children}
     </CartContext.Provider>
