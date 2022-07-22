@@ -24,7 +24,7 @@ interface Product {
 }
 
 export function SelectedCoffee() {
-  const { cart, removeProduct, updateProductAmount } = useCart()
+  const { cart, removeProduct, updateProductAmount, activeAdress } = useCart()
   const cartSize = cart.length
   const cartFormatted = cart.map((product) => ({
     ...product,
@@ -99,7 +99,7 @@ export function SelectedCoffee() {
             </div>
           </TotalContainer>
           <NavLink to="/success" title="Sucesso">
-            <CheckButton>Confirmar pedido</CheckButton>
+            {activeAdress ? <CheckButton>Confirmar pedido</CheckButton> : ''}
           </NavLink>
         </>
       ) : (

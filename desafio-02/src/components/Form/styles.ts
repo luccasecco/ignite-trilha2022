@@ -131,7 +131,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   width: 35rem;
   gap: 1.33rem;
-  margin: 2rem 0 0;
+  margin: 2rem 0 1rem;
   align-items: center;
 `
 

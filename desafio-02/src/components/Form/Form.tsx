@@ -56,13 +56,6 @@ interface NewAdressFormProps {
 
 export function Form() {
   const { createNewAdress } = useCart()
-  // const [selectValue, setSelectValue] = useState('')
-
-  // const paymentOption = [
-  //   { id: 1, name: 'Cartão de Crédito' },
-  //   { id: 2, name: 'Cartão de Débito' },
-  //   { id: 3, name: 'Dinheiro' },
-  // ]
 
   const { register, handleSubmit } = useForm<NewAdressFormProps>({
     resolver: zodResolver(newAdressValidationSchema),
@@ -171,7 +164,6 @@ export function Form() {
               Dinheiro
             </InputMoney>
           </ButtonContainer>
-
           <CheckButton>Confirmar endereço de entrega</CheckButton>
         </PaymentContainer>
       </form>
