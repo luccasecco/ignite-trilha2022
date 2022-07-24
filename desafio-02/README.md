@@ -25,3 +25,7 @@ Para abrir o projeto no seu navegador basta digitar o comando **npm run dev** e 
 - Phosphor-react
 - React-hook-form
 - Zod
+
+
+https://user-images.githubusercontent.com/101674470/180649804-19891f49-3723-4d4a-a768-e5e567cac310.mp4
+
