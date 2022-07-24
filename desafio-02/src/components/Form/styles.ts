@@ -124,13 +124,18 @@ export const PaymentContainer = styled(BaseConatiner)`
 
   button {
     margin: 1rem auto;
+    background: ${(props) => props.theme['purple-500']};
+
+    &:hover {
+      background: ${(props) => props.theme['purple-900']};
+    }
   }
 `
 
 export const ButtonContainer = styled.div`
   display: flex;
   width: 35rem;
-  gap: 1.33rem;
+  gap: 1rem;
   margin: 2rem 0 1rem;
   align-items: center;
 `
@@ -138,11 +143,10 @@ export const ButtonContainer = styled.div`
 const BaseInputPayment = styled.div`
   width: 11.16rem;
   height: 3.18rem;
-  padding: 1rem;
 
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+
   gap: 0.75rem;
 
   border: 0;
@@ -163,18 +167,114 @@ const BaseInputPayment = styled.div`
     box-shadow: 0 0 0 2px ${(props) => props.theme['purple-900']};
   }
 
-  input {
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
+  /* label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-    &:focus {
-      outline: 0;
-      box-shadow: 0 0 0 0 transparent;
-    }
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    cursor: pointer;
+  }
+
+  input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  } */
+
+  span {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    z-index: 1;
   }
 `
 
-export const InputCredit = styled(BaseInputPayment)``
-export const InputDebit = styled(BaseInputPayment)``
-export const InputMoney = styled(BaseInputPayment)``
+export const InputCredit = styled(BaseInputPayment)`
+  position: relative;
+
+  label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+  }
+
+  input {
+    all: unset;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &:checked {
+      border-radius: 8px;
+      border: 1px solid ${(props) => props.theme['purple-900']};
+    }
+  }
+`
+export const InputDebit = styled(BaseInputPayment)`
+  position: relative;
+
+  label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+  }
+
+  input {
+    all: unset;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &:checked {
+      border-radius: 8px;
+      border: 1px solid ${(props) => props.theme['purple-900']};
+    }
+  }
+`
+export const InputMoney = styled(BaseInputPayment)`
+  position: relative;
+
+  label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+  }
+
+  input {
+    all: unset;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &:checked {
+      border-radius: 8px;
+      border: 1px solid ${(props) => props.theme['purple-900']};
+    }
+  }
+`

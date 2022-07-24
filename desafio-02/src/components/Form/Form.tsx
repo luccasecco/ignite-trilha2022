@@ -139,29 +139,42 @@ export function Form() {
           </HeaderContainer>
           <ButtonContainer>
             <InputCredit>
-              <CreditCard size={16} />
-              <input
-                type="radio"
-                value="Cartão de crédito"
-                {...register('payment')}
-              />
-              Cartão de crédito
+              <label htmlFor="creditCard">
+                <CreditCard size={16} />{' '}
+                <input
+                  id="creditCard"
+                  type="radio"
+                  value="Cartão de crédito"
+                  {...register('payment')}
+                />
+                <span>Cartão de Crédito</span>
+              </label>
             </InputCredit>
 
             <InputDebit>
-              <Bank size={16} />
-              <input
-                type="radio"
-                value="Cartão de débito"
-                {...register('payment')}
-              />
-              Cartão de Débito
+              <label htmlFor="debitCard">
+                <Bank size={16} />
+                <input
+                  id="debitCard"
+                  type="radio"
+                  value="Cartão de débito"
+                  {...register('payment')}
+                />
+                <span>Cartão de Débito</span>
+              </label>
             </InputDebit>
 
             <InputMoney>
-              <Money size={16} />
-              <input type="radio" value="Dinheiro" {...register('payment')} />
-              Dinheiro
+              <label htmlFor="money">
+                <Money size={16} />
+                <input
+                  id="money"
+                  type="radio"
+                  value="Dinheiro"
+                  {...register('payment')}
+                />
+                <span>Dinheiro</span>
+              </label>
             </InputMoney>
           </ButtonContainer>
           <CheckButton>Confirmar endereço de entrega</CheckButton>

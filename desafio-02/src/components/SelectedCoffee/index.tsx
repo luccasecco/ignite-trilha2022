@@ -86,6 +86,7 @@ export function SelectedCoffee() {
             <div>
               <p>Total de itens</p>
               <p>Entrega</p>
+
               <h1>Total</h1>
             </div>
             <div>
@@ -95,6 +96,7 @@ export function SelectedCoffee() {
                 }, 0)}
               </p>
               <p>R$ 3,50</p>
+
               <p>{total}</p>
             </div>
           </TotalContainer>

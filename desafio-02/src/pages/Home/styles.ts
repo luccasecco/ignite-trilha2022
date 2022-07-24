@@ -46,7 +46,7 @@ export const IconsContainer = styled.div`
 
   svg {
     color: ${(props) => props.theme['white-100']};
-    margin-right: 0.75rem;
+    /* margin-right: 0.75rem; */
     border-radius: 50%;
     padding: 0.5rem;
   }
@@ -85,6 +85,7 @@ export const DivContainerPackage = styled(BaseDiv)`
   }
 `
 export const DivContainerCoffee = styled(BaseDiv)`
+  max-width: 96%;
   svg {
     background: ${(props) => props.theme['purple-900']};
   }
