@@ -49,6 +49,10 @@ const BaseInput = styled.input`
   height: 2.625rem;
   border: 0;
   margin: 1rem 0;
+
+  @media (max-width: 768px) {
+    max-width: 12rem;
+  }
 `
 
 export const InputCep = styled(BaseInput)`
@@ -130,6 +134,10 @@ export const PaymentContainer = styled(BaseConatiner)`
       background: ${(props) => props.theme['purple-900']};
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const ButtonContainer = styled.div`
@@ -166,26 +174,6 @@ const BaseInputPayment = styled.div`
     outline: 0;
     box-shadow: 0 0 0 2px ${(props) => props.theme['purple-900']};
   }
-
-  /* label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    border: 0;
-    cursor: pointer;
-  }
-
-  input[type='radio'] {
-    position: absolute;
-    opacity: 0;
-    height: 0;
-    width: 0;
-  } */
 
   span {
     margin-left: 0.5rem;

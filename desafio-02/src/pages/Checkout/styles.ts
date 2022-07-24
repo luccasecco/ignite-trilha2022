@@ -9,6 +9,10 @@ export const TitleContainer = styled.div`
 
   font-size: 0.875rem;
   font-family: 'Baloo 2', sans-serif;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const Container = styled.div`
@@ -18,6 +22,10 @@ export const Container = styled.div`
   margin: 2rem auto;
 
   max-width: 74rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const AdressAndPaymentContainer = styled.div`
@@ -33,6 +41,12 @@ export const CheckoutContainer = styled.main`
   justify-content: space-around;
   margin: 0 auto;
   border-radius: 4px;
+
+  padding: 0 2%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const BaseContainer = styled.div`
@@ -50,6 +64,10 @@ export const SelectedCoffeeContainer = styled(BaseContainer)`
 
   border-top-right-radius: 44px;
   border-bottom-left-radius: 44px;
+
+  @media (max-width: 768px) {
+    margin: 2rem auto;
+  }
 `
 
 export const PaymentContainer = styled(BaseContainer)`
