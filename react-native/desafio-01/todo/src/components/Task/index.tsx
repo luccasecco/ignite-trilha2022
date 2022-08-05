@@ -2,20 +2,29 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { styles } from "./styles";
 
-export function Task() {
-  const [statusTask, setStatusCheck] = useState(false)
+interface TaskProps {
+  content: string
+  completedTask: boolean
+  onDeleteTask: () => void
+  onCompletedTask: () => void
+}
+
+export function Task({content, onDeleteTask, onCompletedTask, completedTask}: TaskProps) {
+  
 
   return (
     <View style={styles.container}>
       <TouchableOpacity 
-        style={statusTask? styles.isChecked : undefined}
-        onPress={() => setStatusCheck(!statusTask)}
+        style={completedTask? styles.isChecked : undefined}
+        onPress={onCompletedTask}
       >
         <Image source={require('../../../assets/check.png')} />
       </TouchableOpacity>
-      <Text style={styles.taskText}> Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
+      <Text style={completedTask? styles.taskTextChecked : styles.taskText}> {content} </Text>
      
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={onDeleteTask}
+      >
       <Image 
         source={require('../../../assets/trash.png')}
         style={styles.trashIcon}  

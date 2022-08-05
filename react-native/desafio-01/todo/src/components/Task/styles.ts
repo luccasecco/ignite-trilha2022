@@ -19,7 +19,14 @@ export const styles = StyleSheet.create({
     color: '#F2F2F2',
     textAlign: 'center',
   },
-
+  taskTextChecked: {
+    width: 235,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    color: '#F2F2F2',
+    textAlign: 'center',
+    textDecorationLine: "line-through"
+  },
   trashIcon: {
     width: 40
   },

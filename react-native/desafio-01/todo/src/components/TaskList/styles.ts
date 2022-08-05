@@ -14,6 +14,9 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 10,
     marginRight: 4,
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   button: {
     width: 52,
@@ -26,5 +29,9 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     fontSize: 18,
+  },
+  contentList: {
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   counter: {
@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 10,
     marginLeft: 38,
-    marginBottom: 50,
+    marginBottom: 30,
     borderBottomColor: 'grey',
     borderBottomWidth: 1
   },
@@ -23,19 +23,4 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16
   },
-  emptyTasks: {
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  textOne: {
-    fontSize: 17,
-    fontWeight: 'bold',
-    marginTop: 16,
-    color: '#808080',
-  },
-  textTwo: {
-    color: '#808080',
-    fontSize: 16,
-    marginTop: 5
-  }
-})
+});
