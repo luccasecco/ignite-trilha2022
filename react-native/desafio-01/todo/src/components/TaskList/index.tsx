@@ -1,4 +1,6 @@
 import { TextInput, TouchableOpacity, View, Text } from 'react-native'
+import { NewTasks } from '../NewTasks'
+
 import { styles } from './styles'
 
 export function TaskList() {
@@ -11,14 +13,14 @@ export function TaskList() {
         placeholderTextColor='#808080'
       />
       <TouchableOpacity 
-        style={styles.button}
-        
+        style={styles.button}  
       >
       <Text style={styles.buttonText}>
         +
       </Text>
       </TouchableOpacity>
       </View>
+      <NewTasks />
     </View>
   )
 }
