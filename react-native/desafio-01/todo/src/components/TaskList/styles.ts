@@ -33,5 +33,8 @@ export const styles = StyleSheet.create({
   contentList: {
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  isEmpty: {
+    marginTop: 80
   }
 });

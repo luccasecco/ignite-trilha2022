@@ -6,25 +6,37 @@ import React, { useState } from 'react'
 import { Counter } from '../Counter'
 import { Task } from '../Task'
 
+interface NewTaskProps {
+  id: string
+  content: string
+  isComplete: boolean
+}
+
+
 export function TaskList() {
-  const [newTasks, setNewTasks] = useState<string[]>([])
+  const [toDoList, setToDoList] = useState<NewTaskProps[]>([])
   const [taskContent, setTaskContent] = useState('')
-  const [statusTask, setStatusCheck] = useState(false)
 
   function handleTaskAdd() {
-    if (newTasks.includes(taskContent)) {
-      return Alert.alert('Tarefa repetida', 'Tarefa já cadastrada')
+    const newTaskContent = {
+      id: (Math.random()*100).toString(),
+      content: taskContent,
+      isComplete: false
     }
 
-    setNewTasks(prevState => [...prevState, taskContent])
+    setToDoList(prevState => [...prevState, newTaskContent])
     setTaskContent('')
   }
 
-  function handleDeleteTask(content: string) {
+  function handleDeleteTask(deleteTaskById: string) {
+    const tasksWithoutDeletedOne = toDoList.filter(taskName => {
+      return taskName.id !== deleteTaskById
+    })
+
     Alert.alert('Remover', `Tem certeza que deseja remover essa tarefa?`, [
       {
         text: 'Sim',
-        onPress: () => setNewTasks(prevState => prevState.filter(task => task !== content))
+        onPress: () => setToDoList(tasksWithoutDeletedOne)
       },
       {
         text: 'Cancelar',
@@ -33,11 +45,16 @@ export function TaskList() {
     ])
   }
   
-  function handleMarkAsCompleted(content: string) {
-    setStatusCheck(!statusTask)
+  function handleMarkAsCompleted(id: string) {
+    const completedTask = toDoList.map(task => task.id === id ? {
+      ...task,
+      isComplete: !task.isComplete
+    } : task);
+    setToDoList(completedTask)
   }
-  
-  
+
+  const completedTask = Number((toDoList.filter(item => item.isComplete === true)).length)
+
   return (
     <View >
       <View style={styles.container}>
@@ -59,23 +76,26 @@ export function TaskList() {
       </TouchableOpacity>
       </View>
 
-      <Counter created={newTasks.length} />
+      <Counter created={toDoList.length} completed={completedTask} />
 
       <View style={styles.contentList}>
       <FlatList 
         showsVerticalScrollIndicator={false}
-        data={newTasks}
-        keyExtractor={item => item}
+        data={toDoList}
         renderItem={({item}) => (
           <Task
-            key={item} 
-            content={item}
-            completedTask={statusTask}
-            onCompletedTask={() => handleMarkAsCompleted(item)}
-            onDeleteTask={() => handleDeleteTask(item)}  
+            key={item.id} 
+            content={item.content}
+            completedTask={item.isComplete}
+            onCompletedTask={() => handleMarkAsCompleted(item.id)}
+            onDeleteTask={() => handleDeleteTask(item.id)}  
           />
         )}
-        ListEmptyComponent={() => (<IsEmpty />)}
+        ListEmptyComponent={() => (
+        <View style={styles.isEmpty}>
+        <IsEmpty />
+        </View>
+        )}
       />
       </View>
     </View>
