@@ -1,4 +1,4 @@
-{ 
+{
   "transactions": [
     {
       "id": 1,
@@ -9,7 +9,7 @@
       "createdAt": "2022-08-09T15:12:14.702Z"
     },
     {
-     "id": 2,
+      "id": 2,
       "description": "Hamburguer",
       "type": "outcome",
       "category": "Alimentação",
@@ -18,11 +18,27 @@
     },
     {
       "id": 3,
-       "description": "Ignite Rocketseat",
-       "type": "outcome",
-       "category": "Educação",
-       "price": 1980,
-       "createdAt": "2022-08-09T15:05:14.702Z"
-     }
+      "description": "Ignite Rocketseat",
+      "type": "outcome",
+      "category": "Educação",
+      "price": 1980,
+      "createdAt": "2022-08-09T15:05:14.702Z"
+    },
+    {
+      "description": "Salário",
+      "category": "Engenharia",
+      "price": 5000,
+      "type": "income",
+      "createdAt": "2022-08-09T23:22:47.698Z",
+      "id": 4
+    },
+    {
+      "description": "Pastel",
+      "category": "Alimentação",
+      "price": 5,
+      "type": "outcome",
+      "createdAt": "2022-08-09T23:38:15.753Z",
+      "id": 5
+    }
   ]
 }
