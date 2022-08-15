@@ -25,8 +25,8 @@
       "createdAt": "2022-08-09T15:05:14.702Z"
     },
     {
-      "description": "Salário",
-      "category": "Engenharia",
+      "description": "Pagamento",
+      "category": "Salário",
       "price": 5000,
       "type": "income",
       "createdAt": "2022-08-09T23:22:47.698Z",
@@ -39,6 +39,22 @@
       "type": "outcome",
       "createdAt": "2022-08-09T23:38:15.753Z",
       "id": 5
+    },
+    {
+      "description": "Supermercado",
+      "category": "Compras",
+      "price": 850,
+      "type": "outcome",
+      "createdAt": "2022-08-10T23:43:58.782Z",
+      "id": 6
+    },
+    {
+      "description": "Cartão de crédito",
+      "category": "Cartões",
+      "price": 2000,
+      "type": "outcome",
+      "createdAt": "2022-08-10T23:44:11.662Z",
+      "id": 7
     }
   ]
 }
