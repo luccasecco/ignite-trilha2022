@@ -1,10 +1,9 @@
 import bgImg from '../../assets/cover.svg'
-import { Container } from './styles'
 
 export function Header() {
   return (
-    <Container>
-      <img src={bgImg} alt="" />
-    </Container>
+    <div
+      style={{backgroundImage: `url(${bgImg})`, backgroundRepeat: "no-repeat", width: "100%", height: "18.5rem", backgroundPosition: "center", backgroundSize: "cover"}}>
+    </div>
   )
 }
