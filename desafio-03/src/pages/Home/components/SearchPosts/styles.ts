@@ -27,8 +27,10 @@ export const Container = styled.div`
     margin-bottom: 2rem;
     border-radius: 6px;
     border: 1px solid ${props => props.theme["gray-600"]};
-    background: ${props => props.theme["gray-900"]};
     padding: 0.75rem 1rem;
+    font-size: 1.5rem;
+    color: ${props => props.theme["gray-200"]};
+    background: ${props => props.theme["gray-900"]};
 
     &:focus {
       outline: 0;

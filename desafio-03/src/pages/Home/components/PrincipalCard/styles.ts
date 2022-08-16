@@ -46,6 +46,7 @@ export const Container = styled.section`
   }
 
   .wrapper {
+    width: 100%;
     color: #ffff;
     margin: 2.5rem 2rem 0 0;
     
