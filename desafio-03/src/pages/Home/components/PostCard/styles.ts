@@ -15,7 +15,8 @@ export const Container = styled.div`
     justify-content: space-between;
     margin-bottom: 1.25rem;
 
-    h2 {
+    a {
+      text-decoration: none;
       max-width: 17.68rem;
       font-size: 1.25rem;
       color: ${props => props.theme["gray-100"]};

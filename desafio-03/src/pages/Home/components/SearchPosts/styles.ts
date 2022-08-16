@@ -30,6 +30,11 @@ export const Container = styled.div`
     background: ${props => props.theme["gray-900"]};
     padding: 0.75rem 1rem;
 
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px ${props => props.theme["blue-300"]};
+    }
+
     &::placeholder {
       font-size: 1rem;
       color: ${props => props.theme["gray-500"]}

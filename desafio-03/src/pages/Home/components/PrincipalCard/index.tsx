@@ -1,4 +1,4 @@
-import { ArrowSquareUpRight, Buildings, GithubLogo, Users } from "phosphor-react";
+import { ArrowSquareOut, Buildings, GithubLogo, Users } from "phosphor-react";
 import { NavLink } from "react-router-dom";
 import { Container } from "./styles";
 
@@ -13,7 +13,7 @@ export function PrincipalCard() {
 
           <div className="navigation">
           <NavLink to="https://www.gituhub.com/luccasecco">GITHUB </NavLink>
-          <ArrowSquareUpRight size={18}/>
+          <ArrowSquareOut size={18}/>
           </div>
 
           </header>

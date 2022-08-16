@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import { Container } from "./styles";
 
 export function PostCard() {
   return (
     <Container>
       <header>
-        <h2>JavaScript data types and data structures</h2>
+        <Link to='/posts'>JavaScript data types and data structures</Link>
         <span>Há 1 dia</span>
       </header>
       <p>
