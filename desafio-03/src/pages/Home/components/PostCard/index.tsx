@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Post } from "../..";
+import ReactMarkdown from "react-markdown";
 import { Container } from "./styles";
 
 interface PostCardProps {
@@ -15,7 +16,7 @@ export function PostCard({ post }: PostCardProps) {
         <span>{post.created_at}</span>
       </header>
       <p>
-        {post.body}
+        <ReactMarkdown children={post.body} />
       </p>
     </Container>
   )

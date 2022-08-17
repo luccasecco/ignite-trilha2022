@@ -2,6 +2,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import { Loading } from "../../components/Loader";
 import { useQuery } from "../../hooks/useQuery";
 import { api } from "../../lib/axios";
 import { formatCreatedAt } from "../../utils/formatCreatedAt";
@@ -75,9 +76,9 @@ export function Home() {
             ))}
           </Posts>
         ) : (
-          <p>Sem resultados</p>
+          <Loading />
         )}
-
+        
       </Content>
       <Footer />
     </Container>

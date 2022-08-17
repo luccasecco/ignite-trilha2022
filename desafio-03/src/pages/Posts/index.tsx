@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
-import useSWR from "swr";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { api } from "../../lib/axios";
 import { formatCreatedAt } from "../../utils/formatCreatedAt";
 import { SelectedCard } from "./components/SelectedCard";
+import ReactMarkdown from "react-markdown";
+import useSWR from "swr";
 
 import { Container, Content } from "./styles";
+
 
 export interface IPost {
   title: string;
@@ -38,17 +40,24 @@ async function fetchPost(key: string): Promise<IPost> {
   };
 }
 
+
+
 export function Posts() {
   const { number } = useParams();
   const { data: post, error } = useSWR(`post/${number}`, fetchPost);
-  
+  const contentPost = post?.body
+
   return (
     <>
       <Container>
         <Header />
         <SelectedCard post={post} error={error}/>
         <Content>
-          <p>{post?.body}</p>
+       
+        <p>
+           <ReactMarkdown children={contentPost!} />
+        </p>
+  
         </Content>
         <Footer />
       </Container>
