@@ -45,7 +45,7 @@ async function fetchPosts(key: string) {
 export function Home() {
   const [query, setQuery] = useState('')
   const queryValue = useQuery(query)
-  const { data: posts, error } = useSWR(`posts/${queryValue}`, fetchPosts)
+  const { data: posts } = useSWR(`posts/${queryValue}`, fetchPosts)
 
   return (
     <Container>
@@ -56,7 +56,11 @@ export function Home() {
         <SearchContainer>
           <header>
             <h2>Publicações</h2>
-            <span>{posts?.length} publicações</span>
+            {posts?.length === 1 ? (
+              <span>{posts?.length} publicação</span>
+            ) : (
+              <span>{posts?.length} publicações</span>
+            )}
           </header>
 
           <input
