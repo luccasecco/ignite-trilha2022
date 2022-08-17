@@ -1,10 +1,10 @@
-import { CircleNotch } from "phosphor-react";
-import { LoadingContainer } from "./styles";
+import { CircleNotch } from 'phosphor-react'
+import { LoadingContainer } from './styles'
 
 export function Loading() {
-return (
-  <LoadingContainer>
-    <CircleNotch />
-  </LoadingContainer>
+  return (
+    <LoadingContainer>
+      <CircleNotch />
+    </LoadingContainer>
   )
 }

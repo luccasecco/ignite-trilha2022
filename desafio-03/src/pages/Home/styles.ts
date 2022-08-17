@@ -18,20 +18,20 @@ export const Posts = styled.div`
 
 export const SearchContainer = styled.div`
   width: 100%;
-  margin-top: 4.5rem; 
+  margin-top: 4.5rem;
 
-  header{
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     h2 {
-      color: ${props => props.theme["gray-200"]};
+      color: ${(props) => props.theme['gray-200']};
       font-size: 1.125rem;
     }
 
     span {
-      color: ${props => props.theme["gray-400"]};
+      color: ${(props) => props.theme['gray-400']};
       font-size: 0.875rem;
     }
   }
@@ -42,20 +42,20 @@ export const SearchContainer = styled.div`
     margin-top: 1.33rem;
     margin-bottom: 2rem;
     border-radius: 6px;
-    border: 1px solid ${props => props.theme["gray-600"]};
+    border: 1px solid ${(props) => props.theme['gray-600']};
     padding: 0.75rem 1rem;
     font-size: 1.5rem;
-    color: ${props => props.theme["gray-200"]};
-    background: ${props => props.theme["gray-900"]};
+    color: ${(props) => props.theme['gray-200']};
+    background: ${(props) => props.theme['gray-900']};
 
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 2px ${props => props.theme["blue-300"]};
+      box-shadow: 0 0 0 2px ${(props) => props.theme['blue-300']};
     }
 
     &::placeholder {
       font-size: 1rem;
-      color: ${props => props.theme["gray-500"]}
+      color: ${(props) => props.theme['gray-500']};
     }
   }
 `

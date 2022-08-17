@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.footer`
   display: flex;
@@ -6,6 +6,6 @@ export const Container = styled.footer`
   justify-content: center;
   margin: 15rem auto 0;
   height: 6rem;
-  background: ${props => props.theme["gray-700"]};
-  color: ${props => props.theme["blue-300"]};
+  background: ${(props) => props.theme['gray-700']};
+  color: ${(props) => props.theme['blue-300']};
 `

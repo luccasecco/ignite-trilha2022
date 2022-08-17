@@ -1,32 +1,31 @@
-import { useParams } from "react-router-dom";
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { api } from "../../lib/axios";
-import { formatCreatedAt } from "../../utils/formatCreatedAt";
-import { SelectedCard } from "./components/SelectedCard";
-import ReactMarkdown from "react-markdown";
-import useSWR from "swr";
+import { useParams } from 'react-router-dom'
+import { Footer } from '../../components/Footer'
+import { Header } from '../../components/Header'
+import { api } from '../../lib/axios'
+import { formatCreatedAt } from '../../utils/formatCreatedAt'
+import { SelectedCard } from './components/SelectedCard'
+import ReactMarkdown from 'react-markdown'
+import useSWR from 'swr'
 
-import { Container, Content } from "./styles";
-
+import { Container, Content } from './styles'
 
 export interface IPost {
-  title: string;
-  body: string;
-  created_at: string;
-  comments: number;
-  html_url: string;
+  title: string
+  body: string
+  created_at: string
+  comments: number
+  html_url: string
   user: {
-    login: string;
-  };
+    login: string
+  }
 }
 
 async function fetchPost(key: string): Promise<IPost> {
-  const number = key.replace(/^post\//, "");
+  const number = key.replace(/^post\//, '')
 
   const { data } = await api.get<IPost>(
     `/repos/luccasecco/github-blog/issues/${number}`,
-  );
+  )
 
   return {
     title: data.title,
@@ -37,27 +36,23 @@ async function fetchPost(key: string): Promise<IPost> {
     user: {
       login: data.user.login,
     },
-  };
+  }
 }
 
-
-
 export function Posts() {
-  const { number } = useParams();
-  const { data: post, error } = useSWR(`post/${number}`, fetchPost);
+  const { number } = useParams()
+  const { data: post, error } = useSWR(`post/${number}`, fetchPost)
   const contentPost = post?.body
 
   return (
     <>
       <Container>
         <Header />
-        <SelectedCard post={post} error={error}/>
+        <SelectedCard post={post} error={error} />
         <Content>
-       
-        <p>
-           <ReactMarkdown children={contentPost!} />
-        </p>
-  
+          <p>
+            <ReactMarkdown children={contentPost!} />
+          </p>
         </Content>
         <Footer />
       </Container>

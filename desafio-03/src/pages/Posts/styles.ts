@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.main`
   width: 100%;
@@ -10,9 +10,8 @@ export const Content = styled.div`
   margin: 2.5rem auto;
 
   p {
-    color: ${props => props.theme["gray-400"]};
+    color: ${(props) => props.theme['gray-400']};
     font-size: 1.25rem;
     line-height: 2rem;
   }
 `
-

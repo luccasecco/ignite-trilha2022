@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
-import { Post } from "../..";
-import ReactMarkdown from "react-markdown";
-import { Container } from "./styles";
+import { Link } from 'react-router-dom'
+import { Post } from '../..'
+import ReactMarkdown from 'react-markdown'
+import { Container } from './styles'
 
 interface PostCardProps {
-  post: Post;
+  post: Post
 }
 
 export function PostCard({ post }: PostCardProps) {
-  
   return (
     <Container>
       <header>
