@@ -1,7 +1,9 @@
 "use strict";
+var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -15,11 +17,16 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
+  Avatar: () => Avatar2,
   Box: () => Box,
   Heading: () => Heading,
   Text: () => Text
@@ -185,8 +192,58 @@ var Heading = styled("h2", {
     size: "md"
   }
 });
+
+// src/components/Avatar/index.tsx
+var import_phosphor_react = require("phosphor-react");
+
+// src/components/Avatar/styles.ts
+var Avatar = __toESM(require("@radix-ui/react-avatar"));
+var import_react2 = require("@stitches/react");
+var AvatarContainer = (0, import_react2.styled)(Avatar.Root, {
+  borderRadius: "$full",
+  display: "inline-block",
+  width: "$12",
+  height: "$12",
+  overflow: "hidden"
+});
+var AvatarImage = (0, import_react2.styled)(Avatar.Image, {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "inherit"
+});
+var AvatarFallback = (0, import_react2.styled)(Avatar.Fallback, {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "$gray600",
+  color: "$gray800",
+  svg: {
+    width: "$6",
+    height: "$6"
+  }
+});
+
+// src/components/Avatar/index.tsx
+var import_jsx_runtime = require("react/jsx-runtime");
+function Avatar2(props) {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AvatarContainer, {
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarImage, {
+        ...props
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, {
+        delayMs: 600,
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {})
+      })
+    ]
+  });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  Avatar,
   Box,
   Heading,
   Text
