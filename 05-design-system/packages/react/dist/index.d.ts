@@ -640,4 +640,11 @@ interface ButtonProps extends ComponentProps<typeof Button> {
     as?: ElementType;
 }
 
-export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Heading, HeadingProps, Text, TextProps };
+declare const Input: _stitches_react_types_styled_component.StyledComponent<"input", {}, {}, _stitches_react_types_css_util.CSS<{}, {}, {}, {}>>;
+
+interface TextInputProps extends ComponentProps<typeof Input> {
+    prefix?: string;
+}
+declare function TextInput({ prefix, ...props }: TextInputProps): JSX.Element;
+
+export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Heading, HeadingProps, Text, TextInput, TextInputProps, TextProps };

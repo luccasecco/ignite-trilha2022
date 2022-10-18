@@ -279,10 +279,69 @@ var Button = styled3("button", {
     size: "md"
   }
 });
+
+// src/components/TextInput/styles.ts
+import { styled as styled4 } from "@stitches/react";
+var TextInputContainer = styled4("div", {
+  backgroundColor: "&gray900",
+  padding: "$3 $4",
+  borderRadius: "$sm",
+  boxSizing: "border-box",
+  border: "2px solid $gray900",
+  display: "flex",
+  alignItems: "baseline",
+  "&:has(input:focus)": {
+    borderColor: "$ignite300"
+  },
+  "&:has(input:disabled)": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  }
+});
+var Prefix = styled4("span", {
+  fontFamily: "$default",
+  fontSize: "$sm",
+  color: "$gray400",
+  fontWeight: "regular"
+});
+var Input = styled4("input", {
+  fontFamily: "$default",
+  fontSize: "$sm",
+  color: "$white",
+  fontWeight: "regular",
+  backgroundColor: "transparent",
+  border: 0,
+  width: "100%",
+  "&:focus": {
+    outline: 0
+  },
+  "&:disables": {
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+
+// src/components/TextInput/index.tsx
+import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
+function TextInput({ prefix, ...props }) {
+  return /* @__PURE__ */ jsxs2(TextInputContainer, {
+    children: [
+      !!prefix && /* @__PURE__ */ jsx2(Prefix, {
+        children: prefix
+      }),
+      /* @__PURE__ */ jsx2(Input, {
+        ...props
+      })
+    ]
+  });
+}
 export {
   Avatar2 as Avatar,
   Box,
   Button,
   Heading,
-  Text
+  Text,
+  TextInput
 };

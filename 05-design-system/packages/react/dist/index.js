@@ -30,7 +30,8 @@ __export(src_exports, {
   Box: () => Box,
   Button: () => Button,
   Heading: () => Heading,
-  Text: () => Text
+  Text: () => Text,
+  TextInput: () => TextInput
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -315,11 +316,70 @@ var Button = (0, import_react3.styled)("button", {
     size: "md"
   }
 });
+
+// src/components/TextInput/styles.ts
+var import_react4 = require("@stitches/react");
+var TextInputContainer = (0, import_react4.styled)("div", {
+  backgroundColor: "&gray900",
+  padding: "$3 $4",
+  borderRadius: "$sm",
+  boxSizing: "border-box",
+  border: "2px solid $gray900",
+  display: "flex",
+  alignItems: "baseline",
+  "&:has(input:focus)": {
+    borderColor: "$ignite300"
+  },
+  "&:has(input:disabled)": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  }
+});
+var Prefix = (0, import_react4.styled)("span", {
+  fontFamily: "$default",
+  fontSize: "$sm",
+  color: "$gray400",
+  fontWeight: "regular"
+});
+var Input = (0, import_react4.styled)("input", {
+  fontFamily: "$default",
+  fontSize: "$sm",
+  color: "$white",
+  fontWeight: "regular",
+  backgroundColor: "transparent",
+  border: 0,
+  width: "100%",
+  "&:focus": {
+    outline: 0
+  },
+  "&:disables": {
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+
+// src/components/TextInput/index.tsx
+var import_jsx_runtime2 = require("react/jsx-runtime");
+function TextInput({ prefix, ...props }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, {
+    children: [
+      !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, {
+        children: prefix
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, {
+        ...props
+      })
+    ]
+  });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
   Box,
   Button,
   Heading,
-  Text
+  Text,
+  TextInput
 });
