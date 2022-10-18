@@ -383,14 +383,39 @@ var CheckboxContainer = styled(Checkbox.Root, {
   alignItems: "center",
   justifyContent: "center",
   border: "2px solid $gray900",
+  '&[data-state="checked"]': {
+    backgroundColor: "$ignite300"
+  },
   "&:focus": {
     border: "2px solid $ignite300"
+  }
+});
+var slideIn = keyframes({
+  from: {
+    transform: "translateY(-100%)"
+  },
+  to: {
+    transform: "translateY(0)"
+  }
+});
+var sildeOut = keyframes({
+  from: {
+    transform: "translateY(0)"
+  },
+  to: {
+    transform: "translateY(-100%)"
   }
 });
 var CheckboxIndicator = styled(Checkbox.Indicator, {
   color: "$white",
   width: "$4",
-  height: "$4"
+  height: "$4",
+  '&[data-state="checked"]': {
+    animation: `${slideIn} 200ms ease-out`
+  },
+  '&[data-state="unchecked"]': {
+    animation: `${sildeOut} 200ms ease-out`
+  }
 });
 
 // src/components/Checkbox/index.tsx
@@ -406,12 +431,65 @@ function Checkbox2(props) {
     })
   });
 }
+
+// src/components/MultiStep/styles.ts
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
+  color: "$gray200",
+  defaultVariants: {
+    size: "xs"
+  }
+});
+var Steps = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)",
+  gap: "$2",
+  marginTop: "$1"
+});
+var Step = styled("div", {
+  height: "$1",
+  borderRadius: "$px",
+  backgroundColor: "$gray600",
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "$gray100"
+      }
+    }
+  }
+});
+
+// src/components/MultiStep/index.tsx
+import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
+function MultiStep({ size, currentStep = 1 }) {
+  return /* @__PURE__ */ jsxs3(MultiStepContainer, {
+    children: [
+      /* @__PURE__ */ jsxs3(Label, {
+        children: [
+          "Passo ",
+          currentStep,
+          " de ",
+          size
+        ]
+      }),
+      /* @__PURE__ */ jsx4(Steps, {
+        css: { "--steps-size": size },
+        children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+          return /* @__PURE__ */ jsx4(Step, {
+            active: currentStep >= step
+          }, step);
+        })
+      })
+    ]
+  });
+}
 export {
   Avatar2 as Avatar,
   Box,
   Button,
   Checkbox2 as Checkbox,
   Heading,
+  MultiStep,
   Text,
   TextArea,
   TextInput
