@@ -1,6 +1,6 @@
 import { ArrowRight } from 'phosphor-react'
 
-import type { StoryObj, Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 
 import { Button, ButtonProps } from '@ignite-ui/react'
@@ -10,9 +10,29 @@ export default {
   component: Button,
 
   args: {
-    children: 'Send'
+    children: 'Send',
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
   },
   argyTypes: {
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
     onClick: {
       action: 'click'
     }

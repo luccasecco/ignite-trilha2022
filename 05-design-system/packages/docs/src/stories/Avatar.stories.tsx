@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { Avatar, AvatarProps } from '@ignite-ui/react'
 
@@ -9,6 +9,13 @@ export default {
   args: {
     src: 'https://github.com/luccasecco.png',
     alt: 'Lucca Secco',
+  },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      }
+    }
   }
 } as Meta<AvatarProps>
 

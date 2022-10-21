@@ -1,5 +1,5 @@
-import { styled } from "@stitches/react";
-import { ComponentProps, ElementType } from "react";
+import { styled } from '@stitches/react'
+import { ComponentProps, ElementType } from 'react'
 
 export const Button = styled('button', {
   all: 'unset',
@@ -25,9 +25,8 @@ export const Button = styled('button', {
     height: '$4',
   },
 
-  
   '&:disabled': {
-    cursor: 'not-allowed'
+    cursor: 'not-allowed',
   },
 
   variants: {
@@ -43,7 +42,6 @@ export const Button = styled('button', {
         '&:disabled': {
           backgroundColor: '$gray200',
         },
-
       },
 
       secondary: {
@@ -54,7 +52,7 @@ export const Button = styled('button', {
           backgroundColor: '$ignite500',
           color: '$white',
         },
-  
+
         '&:disabled': {
           color: '$gray200',
           borderColor: '$gray200',
@@ -67,29 +65,27 @@ export const Button = styled('button', {
         '&:not(:disabled):hover': {
           color: '$white',
         },
-  
+
         '&:disabled': {
           color: '$gray600',
         },
       },
-
-  
     },
 
     size: {
       sm: {
-        height:38,
+        height: 38,
       },
 
       md: {
         height: 46,
-      }
-    }
+      },
+    },
   },
 
   defaultVariants: {
     variant: 'primary',
-    size: 'md'
+    size: 'md',
   },
 })
 
