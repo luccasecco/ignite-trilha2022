@@ -7,8 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "start-storybook -p 6006",
     "build": "build-storybook",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
