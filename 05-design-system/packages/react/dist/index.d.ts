@@ -22,6 +22,11 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         ignite700: string;
         ignite900: string;
     };
+    fontWeights: {
+        regular: string;
+        medium: string;
+        bold: string;
+    };
     fontSizes: {
         xxs: string;
         xs: string;
@@ -36,11 +41,6 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         '7xl': string;
         '8xl': string;
         '9xl': string;
-    };
-    fontWeights: {
-        regular: string;
-        medium: string;
-        bold: string;
     };
     fonts: {
         default: string;
@@ -230,6 +230,11 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         ignite700: string;
         ignite900: string;
     };
+    fontWeights: {
+        regular: string;
+        medium: string;
+        bold: string;
+    };
     fontSizes: {
         xxs: string;
         xs: string;
@@ -244,11 +249,6 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         '7xl': string;
         '8xl': string;
         '9xl': string;
-    };
-    fontWeights: {
-        regular: string;
-        medium: string;
-        bold: string;
     };
     fonts: {
         default: string;
@@ -438,6 +438,11 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
         ignite700: string;
         ignite900: string;
     };
+    fontWeights: {
+        regular: string;
+        medium: string;
+        bold: string;
+    };
     fontSizes: {
         xxs: string;
         xs: string;
@@ -452,11 +457,6 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
         '7xl': string;
         '8xl': string;
         '9xl': string;
-    };
-    fontWeights: {
-        regular: string;
-        medium: string;
-        bold: string;
     };
     fonts: {
         default: string;
@@ -632,6 +632,9 @@ declare const AvatarImage: _stitches_react_types_styled_component.StyledComponen
 interface AvatarProps extends ComponentProps<typeof AvatarImage> {
 }
 declare function Avatar(props: AvatarProps): JSX.Element;
+declare namespace Avatar {
+    var displayName: string;
+}
 
 declare const Button: _stitches_react_types_styled_component.StyledComponent<"button", {
     variant?: "primary" | "secondary" | "tertiary" | undefined;
@@ -647,6 +650,9 @@ interface TextInputProps extends ComponentProps<typeof Input> {
     prefix?: string;
 }
 declare function TextInput({ prefix, ...props }: TextInputProps): JSX.Element;
+declare namespace TextInput {
+    var displayName: string;
+}
 
 declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"textarea", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -665,6 +671,11 @@ declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"
         ignite700: string;
         ignite900: string;
     };
+    fontWeights: {
+        regular: string;
+        medium: string;
+        bold: string;
+    };
     fontSizes: {
         xxs: string;
         xs: string;
@@ -679,11 +690,6 @@ declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"
         '7xl': string;
         '8xl': string;
         '9xl': string;
-    };
-    fontWeights: {
-        regular: string;
-        medium: string;
-        bold: string;
     };
     fonts: {
         default: string;
@@ -870,6 +876,11 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
         ignite700: string;
         ignite900: string;
     };
+    fontWeights: {
+        regular: string;
+        medium: string;
+        bold: string;
+    };
     fontSizes: {
         xxs: string;
         xs: string;
@@ -884,11 +895,6 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
         '7xl': string;
         '8xl': string;
         '9xl': string;
-    };
-    fontWeights: {
-        regular: string;
-        medium: string;
-        bold: string;
     };
     fonts: {
         default: string;
@@ -1059,11 +1065,17 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
 interface CheckboxProps extends ComponentProps<typeof CheckboxContainer> {
 }
 declare function Checkbox(props: CheckboxProps): JSX.Element;
+declare namespace Checkbox {
+    var displayName: string;
+}
 
 interface MultiStepProps {
     size: number;
     currentStep?: number;
 }
 declare function MultiStep({ size, currentStep }: MultiStepProps): JSX.Element;
+declare namespace MultiStep {
+    var displayName: string;
+}
 
 export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps };
