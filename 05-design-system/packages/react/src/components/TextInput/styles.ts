@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from '@stitches/react'
 
 export const TextInputContainer = styled('div', {
   backgroundColor: '&gray900',
@@ -10,12 +10,12 @@ export const TextInputContainer = styled('div', {
   alignItems: 'baseline',
 
   '&:has(input:focus)': {
-    borderColor: '$ignite300'
+    borderColor: '$ignite300',
   },
 
   '&:has(input:disabled)': {
     opacity: 0.5,
-    cursor: 'not-allowed'
+    cursor: 'not-allowed',
   },
 })
 
@@ -36,7 +36,7 @@ export const Input = styled('input', {
   width: '100%',
 
   '&:focus': {
-    outline: 0
+    outline: 0,
   },
 
   '&:disables': {
@@ -45,5 +45,5 @@ export const Input = styled('input', {
 
   '&:placeholder': {
     color: '$gray400',
-  }
+  },
 })

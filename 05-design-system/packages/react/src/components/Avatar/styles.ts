@@ -1,12 +1,12 @@
 import * as Avatar from '@radix-ui/react-avatar'
-import { styled } from "@stitches/react";
+import { styled } from '@stitches/react'
 
 export const AvatarContainer = styled(Avatar.Root, {
   borderRadius: '$full',
   display: 'inline-block',
   width: '$12',
   height: '$12',
-  overflow: 'hidden'
+  overflow: 'hidden',
 })
 
 export const AvatarImage = styled(Avatar.Image, {
@@ -28,5 +28,5 @@ export const AvatarFallback = styled(Avatar.Fallback, {
   svg: {
     width: '$6',
     height: '$6',
-  }
+  },
 })
