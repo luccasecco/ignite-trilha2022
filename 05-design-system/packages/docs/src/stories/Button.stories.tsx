@@ -65,7 +65,7 @@ export const WhitIcon: StoryObj<ButtonProps> = {
   args: {
     children: (
       <>
-      Avançar
+      Próximo passo
       <ArrowRight  />
       </>
     )
